@@ -2,11 +2,17 @@ import "@/static/css/globals.css";
 
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Openable",
-  description: "Openable dev site",
+import { Footer } from "@/components/ui/footer";
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const t = await getTranslations();
+
+  return {
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+  };
 };
 
 const RootLayout = async ({
@@ -19,9 +25,10 @@ const RootLayout = async ({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="bg-linear-to-r from-grey-800 to-grey-900 text-white">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <main>{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

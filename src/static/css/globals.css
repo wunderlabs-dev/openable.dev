@@ -1,1 +1,21 @@
 @import "tailwindcss";
+@import "@fontsource-variable/host-grotesk";
+
+@theme {
+  --font-sans: "Host Grotesk Variable", sans-serif;
+
+  --color-grey-50: #b5b5b5;
+  --color-grey-100: #808080;
+  --color-grey-700: #303030;
+  --color-grey-800: #252525;
+  --color-grey-900: #191919;
+
+  --color-orange-200: #ffa566;
+  --color-orange-400: #ff6900;
+
+  --color-amber-200: #daae71;
+  --color-amber-500: #c17812;
+
+  --spacing-container: calc(var(--spacing) * 360);
+  --max-width-container: var(--spacing-container);
+}

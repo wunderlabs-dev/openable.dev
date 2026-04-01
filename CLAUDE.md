@@ -4,6 +4,8 @@
 
 Marketing/dev site for Openable, built with Next.js 16 + TypeScript + Tailwind 4, statically exported (SSG).
 
+This site shares the same design language as `~/Work/claudebin.com` but with a different color palette. When implementing new sections or components, reference that project for patterns and structure. Ask the user if unsure about how something should look or behave.
+
 ## Writing
 
 - Never use em dashes. Use colons for definitions, commas or parentheses for asides.
@@ -35,6 +37,13 @@ pnpm lint:fix         # oxlint --fix
 pnpm fmt              # oxfmt format
 pnpm fmt:check        # oxfmt check
 ```
+
+## Styling
+
+- Always use Tailwind utility classes. No arbitrary values, no inline styles, no raw CSS on elements
+- If a value does not exist as a Tailwind class, add it as a theme token in `src/static/css/globals.css` and use the resulting class
+- Color tokens live in `@theme` in `src/static/css/globals.css`, grouped by color name (grey, orange, amber, etc.)
+- Use Tailwind opacity modifiers (`bg-grey-50/20`) instead of rgba values
 
 ## Stack
 

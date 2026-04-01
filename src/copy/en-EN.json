@@ -2,5 +2,16 @@
   "metadata": {
     "title": "Openable",
     "description": "Openable dev site"
+  },
+  "footer": {
+    "copyright": "© {year} Openable.dev created by <link>Wunderlabs</link>. All rights reserved.",
+    "product": "Product",
+    "overview": "Overview",
+    "docs": "Docs",
+    "community": "Community",
+    "github": "GitHub",
+    "vtemian": "X @vtemian",
+    "balajmarius": "X @balajmarius",
+    "contact": "Contact"
   }
 }
