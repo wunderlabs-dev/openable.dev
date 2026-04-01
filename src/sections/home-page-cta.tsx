@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
+import { Typography } from "@/components/ui/typography";
 import { SvgIconDownload } from "@/components/icon/svg-icon-download";
 import { SvgIconEye } from "@/components/icon/svg-icon-eye";
 
@@ -23,11 +24,11 @@ const HomePageCta = async () => {
       <Card variant="solid" spacing="lg">
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col gap-4">
-            <h2 className="text-5xl font-extrabold leading-none">
+            <Typography variant="h1" as="h2">
               {t.rich("cta.title", renderers)}
-            </h2>
+            </Typography>
 
-            <p className="text-base leading-6">{t("cta.description")}</p>
+            <Typography variant="small">{t("cta.description")}</Typography>
           </div>
 
           <div className="flex items-center gap-3">

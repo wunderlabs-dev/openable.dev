@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { Typography } from "@/components/ui/typography";
 import { SvgIconEye } from "@/components/icon/svg-icon-eye";
 
 const faqKeys = [
@@ -27,10 +28,15 @@ const HomePageFaq = () => {
     <Container size="md">
       <div className="flex flex-col items-center gap-12">
         <div className="flex w-full flex-col gap-4">
-          <h2 className="bg-linear-to-r from-amber-200 to-amber-500 bg-clip-text text-4xl font-semibold leading-10 text-transparent">
+          <Typography
+            variant="h2"
+            className="bg-linear-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent"
+          >
             {t("faq.title")}
-          </h2>
-          <p className="text-base leading-6 text-grey-100">{t("faq.subtitle")}</p>
+          </Typography>
+          <Typography variant="small" color="muted">
+            {t("faq.subtitle")}
+          </Typography>
         </div>
 
         <Accordion className="w-full">

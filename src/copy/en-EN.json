@@ -3,6 +3,26 @@
     "title": "Openable.dev",
     "description": "Run AI-generated apps without hassle"
   },
+  "hero": {
+    "brand": "Openable.dev <muted>by Wunderlabs</muted>",
+    "title": "<gradient>Run AI-generated apps</gradient> without hassle",
+    "description": "Openable.dev is the missing link between AI code generation and local development. Import, run, and edit your projects in Cursor. No Node.js, no terminal commands, no configuration.",
+    "download": "Download v1.0.2",
+    "features": {
+      "zero": {
+        "title": "Zero configuration",
+        "description": "No need to install Node.js, npm, or any development tools."
+      },
+      "cursor": {
+        "title": "Cursor friendly",
+        "description": "Built with simplicity in mind. If you can use an app, you can run and edit your code."
+      },
+      "ai": {
+        "title": "Works with any AI platform",
+        "description": "Use Lovable, Bolt, v0, or any other AI code generation platform. The projects are imported with GitHub!"
+      }
+    }
+  },
   "appBar": {
     "overview": "Overview",
     "features": "Features",
