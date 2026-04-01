@@ -20,26 +20,14 @@ const SvgIconSteps = ({ active, className }: SvgIconStepsProps) => {
       fill="none"
       className={cn("-scale-y-100", className)}
     >
-      <defs>
-        <linearGradient
-          id="steps-gradient"
-          x1="0"
-          y1="0"
-          x2="812"
-          y2="812"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#FF6900" />
-          <stop offset="1" stopColor="#C17812" />
-        </linearGradient>
-      </defs>
       {rings.map((d, index) => (
         <path
           key={index}
           d={d}
-          fill={index <= active ? "url(#steps-gradient)" : "#B5B5B5"}
-          opacity={index <= active ? 1 : 0.3}
-          className="transition-all duration-300"
+          className={cn(
+            "transition-all duration-300",
+            index <= active ? "fill-amber-500 opacity-100" : "fill-grey-50 opacity-30",
+          )}
         />
       ))}
     </svg>
