@@ -17,11 +17,14 @@
   --color-amber-200: #daae71;
   --color-amber-500: #c17812;
 
-  --spacing-section: calc(var(--spacing) * 180);
-  --max-width-section: var(--spacing-section);
+  --spacing-narrow: calc(var(--spacing) * 180);
+  --max-width-narrow: var(--spacing-narrow);
 
-  --spacing-container: calc(var(--spacing) * 360);
-  --max-width-container: var(--spacing-container);
+  --spacing-standard: calc(var(--spacing) * 240);
+  --max-width-standard: var(--spacing-standard);
+
+  --spacing-wide: calc(var(--spacing) * 360);
+  --max-width-wide: var(--spacing-wide);
 
   --shadow-card-inset:
     inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(255, 255, 255, 0.2);

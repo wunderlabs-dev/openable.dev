@@ -13,7 +13,7 @@ type AccordionProps = React.ComponentProps<"div">;
 
 const Accordion = ({ className, children, ...props }: AccordionProps) => {
   return (
-    <div data-slot="accordion" className={cn("flex w-full flex-col", className)} {...props}>
+    <div data-slot="accordion" className={cn("flex flex-col w-full", className)} {...props}>
       {children}
     </div>
   );

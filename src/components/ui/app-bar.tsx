@@ -25,16 +25,16 @@ const AppBar = ({ className, ...props }: AppBarProps) => {
   const t = useTranslations();
 
   return (
-    <header data-slot="app-bar" className={cn("sticky top-4 z-50", className)} {...props}>
-      <Container className="flex max-w-3xl items-center gap-3">
+    <header data-slot="app-bar" className={cn("fixed inset-x-0 top-4 z-50", className)} {...props}>
+      <Container className="flex items-center gap-3 whitespace-nowrap">
         <Link
           href="/"
-          className="flex h-14 px-6 items-center justify-center rounded-full bg-grey-50/10 shadow-card-inset backdrop-blur-2xl"
+          className="flex h-14 items-center justify-center rounded-full bg-grey-50/10 px-6 shadow-card-inset backdrop-blur-2xl"
         >
           <SvgIconOpenableSymbol size="auto" className="h-5" />
         </Link>
 
-        <div className="flex items-center gap-12 rounded-full bg-grey-50/10 p-1 shadow-card-inset backdrop-blur-2xl">
+        <div className="flex items-center gap-12 rounded-full bg-grey-50/10 p-1 backdrop-blur-2xl shadow-card-inset">
           <Nav>
             {links.map((link) => (
               <NavLink key={link.href} href={link.href}>

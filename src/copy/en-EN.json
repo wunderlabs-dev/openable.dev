@@ -23,6 +23,26 @@
       }
     }
   },
+  "features": {
+    "title": "<gradient>Everything you need</gradient>\nnothing you don't",
+    "description": "Openable.dev removes all the complexity of local development while giving you full control.",
+    "creators": {
+      "title": "Made for creators, not just developers.",
+      "description": "Optimized for projects created by tools like Lovable. Go from generated code to a running app in seconds."
+    },
+    "github": {
+      "title": "GitHub integration",
+      "description": "Connect your GitHub account and clone, sync, update your repositories easily directly from Openable."
+    },
+    "cursor": {
+      "title": "Open in Cursor instantly",
+      "description": "Jump straight into editing with Cursor. Perfect for refining AI-generated code."
+    },
+    "setup": {
+      "title": "One-click project setup",
+      "description": "Import a repository and run it instantly. No Node.js installation. No npm commands."
+    }
+  },
   "appBar": {
     "overview": "Overview",
     "features": "Features",
@@ -31,7 +51,7 @@
     "download": "Download"
   },
   "cta": {
-    "title": "<gradient>Turn AI-generated code</gradient> into a real app",
+    "title": "<gradient>Turn AI-generated code</gradient>\ninto a real app",
     "description": "Stop fighting with development setup.\nRun and edit AI-generated applications locally in seconds.",
     "download": "Download v1.0.2",
     "docs": "View documentation"

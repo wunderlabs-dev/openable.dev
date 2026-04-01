@@ -3,13 +3,14 @@ import type * as React from "react";
 import { cn } from "@/utils/helpers";
 import { spacingClassNames, type Spacing } from "@/utils/spacing";
 
-type ContainerSize = "sm" | "md" | "lg" | "xl";
+type ContainerSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 const containerSizeClassNames: Record<ContainerSize, string> = {
-  sm: "max-w-md",
-  md: "max-w-xl",
-  lg: "max-w-section",
-  xl: "max-w-container",
+  xs: "max-w-md",
+  sm: "max-w-xl",
+  md: "max-w-narrow",
+  lg: "max-w-standard",
+  xl: "max-w-wide",
 };
 
 type ContainerProps<T extends React.ElementType = "div"> = {
@@ -34,7 +35,7 @@ const Container = <T extends React.ElementType = "div">({
     <Component
       data-slot="container"
       className={cn(
-        "mx-auto w-full px-4 2xl:px-0",
+        "mx-auto w-full",
         containerSizeClassNames[size],
         spacingClassNames[spacing],
         className,

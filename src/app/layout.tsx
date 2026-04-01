@@ -25,7 +25,10 @@ const RootLayout = async ({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="bg-grey-900 text-white">
+    <html
+      lang={locale}
+      className="bg-grey-900 text-white selection:bg-amber-500 selection:text-white"
+    >
       <body className="bg-linear-to-r from-grey-800 to-grey-900 antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppBar />

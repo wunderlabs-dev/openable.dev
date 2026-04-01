@@ -25,7 +25,7 @@ const HomePageFaq = () => {
   const t = useTranslations();
 
   return (
-    <Container size="md">
+    <Container size="sm">
       <div className="flex flex-col items-center gap-12">
         <div className="flex w-full flex-col gap-4">
           <Typography

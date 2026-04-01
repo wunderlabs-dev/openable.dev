@@ -67,7 +67,7 @@ const Footer = ({ className, ...props }: FooterProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 sm:flex-row lg:gap-12">
+          <div className="flex flex-col gap-6 sm:flex-row sm:gap-12">
             {sections.map((section) => (
               <nav key={section.title} className="flex flex-col gap-3">
                 <Typography variant="h4">{t(section.title)}</Typography>

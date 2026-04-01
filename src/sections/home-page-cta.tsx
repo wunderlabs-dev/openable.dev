@@ -20,11 +20,11 @@ const HomePageCta = async () => {
   const t = await getTranslations();
 
   return (
-    <Container size="lg">
+    <Container size="md">
       <Card variant="solid" spacing="lg">
         <div className="flex flex-col items-center gap-8">
-          <div className="flex flex-col gap-4">
-            <Typography variant="h1" as="h2">
+          <div className="flex w-full flex-col gap-4 whitespace-pre-line">
+            <Typography variant="h3" as="h2">
               {t.rich("cta.title", renderers)}
             </Typography>
 
