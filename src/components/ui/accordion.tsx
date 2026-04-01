@@ -7,6 +7,7 @@ import { PlusIcon, MinusIcon } from "lucide-react";
 
 import { cn } from "@/utils/helpers";
 import { accordionTransition, accordionVariants } from "@/utils/animations";
+import { Typography } from "@/components/ui/typography";
 
 type AccordionProps = React.ComponentProps<"div">;
 
@@ -29,10 +30,7 @@ const AccordionItem = ({ className, children }: AccordionItemProps) => {
   return (
     <div
       data-slot="accordion-item"
-      className={cn(
-        "flex flex-col gap-4 border-b border-grey-50/30 px-6 py-3 first:border-t",
-        className,
-      )}
+      className={cn("flex flex-col border-b border-grey-50/30 px-6 py-3 first:border-t", className)}
     >
       {children(value, toggle)}
     </div>
@@ -54,7 +52,9 @@ const AccordionTrigger = ({ className, children, isOpen, onToggle }: AccordionTr
       onClick={onToggle}
       className={cn("flex w-full cursor-pointer items-center gap-12 text-left", className)}
     >
-      <span className="flex-1 text-xl font-semibold leading-8 text-white">{children}</span>
+      <Typography variant="h4" as="span" className="flex-1">
+        {children}
+      </Typography>
       {isOpen ? (
         <MinusIcon className="size-4 shrink-0 text-white" />
       ) : (
@@ -83,7 +83,7 @@ const AccordionContent = ({ className, children, isOpen }: AccordionContentProps
           transition={accordionTransition}
           className="overflow-hidden"
         >
-          <div className={cn("text-sm leading-5 text-grey-100", className)}>{children}</div>
+          <div className={cn("pt-4 text-sm leading-5 text-grey-100", className)}>{children}</div>
         </motion.div>
       ) : null}
     </AnimatePresence>
