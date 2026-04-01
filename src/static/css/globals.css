@@ -18,4 +18,7 @@
 
   --spacing-container: calc(var(--spacing) * 360);
   --max-width-container: var(--spacing-container);
+
+  --shadow-card-inset:
+    inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(255, 255, 255, 0.2);
 }

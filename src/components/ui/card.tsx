@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/utils/helpers";
 
-const cardVariants = cva("relative overflow-hidden rounded-3xl", {
+const cardVariants = cva("relative overflow-hidden rounded-3xl shadow-card-inset", {
   variants: {
     variant: {
       solid: "bg-grey-900/20",

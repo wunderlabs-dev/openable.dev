@@ -40,9 +40,10 @@ pnpm fmt:check        # oxfmt check
 
 ## Styling
 
-- Always use Tailwind utility classes. No arbitrary values, no inline styles, no raw CSS on elements
-- If a value does not exist as a Tailwind class, add it as a theme token in `src/static/css/globals.css` and use the resulting class
-- Color tokens live in `@theme` in `src/static/css/globals.css`, grouped by color name (grey, orange, amber, etc.)
+- Always use Tailwind utility classes. No arbitrary values (`[...]`), no inline styles, no raw CSS on elements
+- If a value does not exist as a Tailwind class, add it as a theme token in `src/static/css/globals.css` under `@theme` and use the resulting class (e.g. `--shadow-glass-inset` becomes `shadow-glass-inset`)
+- Color tokens are grouped by color name (grey, orange, amber, etc.)
+- Shadow, spacing, and other tokens follow the pattern `--{utility}-{name}` (e.g. `--shadow-glass-inset`)
 - Use Tailwind opacity modifiers (`bg-grey-50/20`) instead of rgba values
 
 ## Stack
