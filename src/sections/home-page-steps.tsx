@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/ui/container";
 import { Typography } from "@/components/ui/typography";
+import { SvgIconSteps } from "@/components/icon/svg-icon-steps";
 
 const renderers = {
   gradient: (chunks: ReactNode) => (
@@ -38,9 +39,12 @@ const HomePageSteps = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2">
-          <div />
-          <div className="flex flex-col gap-16">
+        <div className="grid grid-cols-2 gap-24">
+          <div className="col-span-1 relative">
+            <SvgIconSteps active={0} className="absolute right-0 h-full w-auto" />
+          </div>
+
+          <div className="col-span-1 flex flex-col gap-16">
             {stepKeys.map(({ key, step }) => (
               <div key={key} className="flex flex-col gap-6 opacity-25">
                 <div className="flex flex-col">

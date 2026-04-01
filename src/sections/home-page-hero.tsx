@@ -13,12 +13,12 @@ import { LavaBlob } from "@/components/ui/lava-blob";
 import { Typography } from "@/components/ui/typography";
 
 const renderers = {
+  muted: (chunks: ReactNode) => <span className="text-grey-100">{chunks}</span>,
   gradient: (chunks: ReactNode) => (
     <span className="bg-linear-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">
       {chunks}
     </span>
   ),
-  muted: (chunks: ReactNode) => <span className="text-grey-100">{chunks}</span>,
 } as const;
 
 const features = [
@@ -45,6 +45,7 @@ const HomePageHero = async () => {
   return (
     <div className="relative flex flex-col items-center gap-16">
       <LavaBlob />
+
       <Container size="sm">
         <div className="flex flex-col gap-2">
           <Typography variant="small" fontWeight="semibold">

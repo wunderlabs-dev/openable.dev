@@ -30,7 +30,7 @@ const HomePageFeatures = async () => {
 
         <div className="col-span-2 flex flex-col gap-8">
           <Card variant="solid" spacing="md" className="h-116">
-            <div className="flex flex-col gap-2 w-1/2">
+            <div className="flex w-1/2 flex-col gap-2">
               <Typography variant="h5">{t("features.creators.title")}</Typography>
               <Typography variant="small" color="muted">
                 {t("features.creators.description")}
@@ -59,7 +59,7 @@ const HomePageFeatures = async () => {
           </div>
 
           <Card variant="solid" spacing="md" className="h-116">
-            <div className="flex flex-col gap-2 w-1/2">
+            <div className="flex w-1/2 flex-col gap-2">
               <Typography variant="h5">{t("features.setup.title")}</Typography>
               <Typography variant="small" color="muted">
                 {t("features.setup.description")}

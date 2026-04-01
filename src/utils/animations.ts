@@ -37,6 +37,18 @@ const lavaBlobSecondaryTransition: Transition = {
   ease: "easeInOut",
 };
 
+const navIndicatorTransition: Transition = {
+  type: "spring",
+  stiffness: 150,
+  damping: 18,
+};
+
+const navIndicatorInitial = { opacity: 0 };
+
+const navIndicatorAnimate = { opacity: 1 };
+
+const navIndicatorExit = { opacity: 0 };
+
 export {
   accordionTransition,
   accordionVariants,
@@ -44,4 +56,8 @@ export {
   lavaBlobPrimaryTransition,
   lavaBlobSecondaryAnimate,
   lavaBlobSecondaryTransition,
+  navIndicatorTransition,
+  navIndicatorInitial,
+  navIndicatorAnimate,
+  navIndicatorExit,
 };

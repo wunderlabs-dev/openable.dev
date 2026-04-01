@@ -29,12 +29,12 @@ const AppBar = ({ className, ...props }: AppBarProps) => {
       <Container className="flex items-center gap-3 whitespace-nowrap">
         <Link
           href="/"
-          className="flex h-14 items-center justify-center rounded-full bg-grey-50/10 px-6 shadow-card-inset backdrop-blur-2xl"
+          className="flex h-14 items-center justify-center px-6 rounded-full bg-grey-50/10 shadow-card-inset backdrop-blur-2xl"
         >
           <SvgIconOpenableSymbol size="auto" className="h-5" />
         </Link>
 
-        <div className="flex items-center gap-12 rounded-full bg-grey-50/10 p-1 backdrop-blur-2xl shadow-card-inset">
+        <div className="flex items-center gap-12 p-1 rounded-full bg-grey-50/10 shadow-card-inset backdrop-blur-2xl">
           <Nav>
             {links.map((link) => (
               <NavLink key={link.href} href={link.href}>
