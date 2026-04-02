@@ -26,7 +26,7 @@ const AppBar = ({ className, ...props }: AppBarProps) => {
 
   return (
     <Entrance className={cn("fixed inset-x-0 top-4 z-50", className)}>
-      <header data-slot="app-bar" {...props}>
+      <header data-slot="app-bar" className="backdrop-blur-2xl" {...props}>
         <Container className="flex items-center justify-center gap-3 whitespace-nowrap">
           <Link
             href="/"
