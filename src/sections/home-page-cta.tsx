@@ -2,13 +2,14 @@ import { getTranslations } from "next-intl/server";
 
 import { gradientRenderer } from "@/utils/renderers";
 
+import { SvgIconDownload } from "@/components/icon/svg-icon-download";
+import { SvgIconBrowser } from "@/components/icon/svg-icon-browser";
+import { SvgIconEye } from "@/components/icon/svg-icon-eye";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Typography } from "@/components/ui/typography";
-import { SvgIconDownload } from "@/components/icon/svg-icon-download";
-import { SvgIconBrowser } from "@/components/icon/svg-icon-browser";
-import { SvgIconEye } from "@/components/icon/svg-icon-eye";
 
 const renderers = { gradient: gradientRenderer } as const;
 
@@ -16,7 +17,7 @@ const HomePageCta = async () => {
   const t = await getTranslations();
 
   return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <SvgIconBrowser className="-mt-12 -mb-72 h-200" />
 
       <Container size="md">

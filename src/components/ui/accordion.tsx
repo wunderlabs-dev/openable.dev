@@ -30,7 +30,7 @@ const AccordionItem = ({ className, children }: AccordionItemProps) => {
   return (
     <div
       data-slot="accordion-item"
-      className={cn("flex flex-col border-b border-grey-50/30 px-6 py-3 first:border-t", className)}
+      className={cn("flex flex-col px-6 py-3 border-b border-grey-50/30 first:border-t", className)}
     >
       {children(value, toggle)}
     </div>
@@ -50,15 +50,15 @@ const AccordionTrigger = ({ className, children, isOpen, onToggle }: AccordionTr
       data-slot="accordion-trigger"
       type="button"
       onClick={onToggle}
-      className={cn("flex w-full cursor-pointer items-center gap-12 text-left", className)}
+      className={cn("flex w-full items-center gap-12 text-left cursor-pointer", className)}
     >
       <Typography variant="h4" as="span" className="flex-1">
         {children}
       </Typography>
       {isOpen ? (
-        <MinusIcon className="size-4 shrink-0 text-white" />
+        <MinusIcon className="shrink-0 size-4 text-white" />
       ) : (
-        <PlusIcon className="size-4 shrink-0 text-white" />
+        <PlusIcon className="shrink-0 size-4 text-white" />
       )}
     </button>
   );

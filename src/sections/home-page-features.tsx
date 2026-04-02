@@ -41,7 +41,7 @@ const HomePageFeatures = async () => {
             <Image
               src={madeForCreatorsSrc}
               alt={t("features.creators.title")}
-              className="h-70 w-auto ml-auto object-cover select-none"
+              className="ml-auto h-70 w-auto select-none object-cover"
             />
           </Card>
 
@@ -57,7 +57,7 @@ const HomePageFeatures = async () => {
               <Image
                 src={githubIntegrationSrc}
                 alt={t("features.github.title")}
-                className="h-70 w-auto mx-auto object-cover select-none"
+                className="mx-auto h-70 w-auto select-none object-cover"
               />
             </Card>
 
@@ -72,7 +72,7 @@ const HomePageFeatures = async () => {
               <Image
                 src={openInCursorSrc}
                 alt={t("features.cursor.title")}
-                className="h-70 w-auto mx-auto object-cover select-none"
+                className="mx-auto h-70 w-auto select-none object-cover"
               />
             </Card>
           </div>
@@ -88,7 +88,7 @@ const HomePageFeatures = async () => {
             <Image
               src={oneClickSetupSrc}
               alt={t("features.setup.title")}
-              className="h-70 w-auto mx-auto object-cover select-none"
+              className="mx-auto h-70 w-auto select-none object-cover"
             />
           </Card>
         </div>

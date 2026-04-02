@@ -8,9 +8,8 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/helpers";
 import {
   navIndicatorTransition,
-  navIndicatorInitial,
-  navIndicatorAnimate,
-  navIndicatorExit,
+  navIndicatorHidden,
+  navIndicatorVisible,
 } from "@/utils/animations";
 
 type NavProps = {
@@ -57,11 +56,11 @@ const Nav = ({ className, children }: NavProps) => {
         {indicator ? (
           <motion.div
             className="absolute bottom-1 h-0.5 rounded-full bg-amber-500"
-            initial={navIndicatorInitial}
-            exit={navIndicatorExit}
+            initial={navIndicatorHidden}
+            exit={navIndicatorHidden}
             transition={navIndicatorTransition}
             animate={{
-              ...navIndicatorAnimate,
+              ...navIndicatorVisible,
               left: indicator.left,
               width: indicator.width,
             }}

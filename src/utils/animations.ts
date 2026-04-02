@@ -1,47 +1,53 @@
-import type { Transition } from "motion/react";
-
-const accordionTransition: Transition = {
-  duration: 0.25,
-  ease: [0.16, 1, 0.3, 1],
-};
-
 const accordionVariants = {
   initial: { height: 0, opacity: 0 },
   animate: { height: "auto", opacity: 1 },
   exit: { height: 0, opacity: 0 },
-};
+} as const;
+
+const accordionTransition = {
+  duration: 0.25,
+  ease: [0.16, 1, 0.3, 1],
+} as const;
 
 const lavaBlobPrimaryAnimate = {
   x: [0, 120, -80, 40, 0],
   y: [0, -100, 60, -40, 0],
   scale: [1, 1.3, 0.8, 1.15, 1],
   rotate: [0, 25, -20, 10, 0],
-};
+} as const;
 
-const lavaBlobPrimaryTransition: Transition = {
+const lavaBlobPrimaryTransition = {
   duration: 10,
   repeat: Infinity,
   ease: "easeInOut",
-};
+} as const;
 
 const lavaBlobSecondaryAnimate = {
   x: [0, -100, 80, -60, 0],
   y: [0, 80, -70, 50, 0],
   scale: [1, 0.8, 1.3, 0.9, 1],
   rotate: [0, -20, 15, -25, 0],
-};
+} as const;
 
-const lavaBlobSecondaryTransition: Transition = {
+const lavaBlobSecondaryTransition = {
   duration: 13,
   repeat: Infinity,
   ease: "easeInOut",
-};
+} as const;
 
-const navIndicatorTransition: Transition = {
+const navIndicatorHidden = {
+  opacity: 0,
+} as const;
+
+const navIndicatorVisible = {
+  opacity: 1,
+} as const;
+
+const navIndicatorTransition = {
   type: "spring",
   stiffness: 150,
   damping: 18,
-};
+} as const;
 
 const browserPanelInitial = {
   y: 0,
@@ -57,30 +63,17 @@ const browserPanelTransition = {
   damping: 20,
 } as const;
 
-const navIndicatorInitial = {
-  opacity: 0,
-} as const;
-
-const navIndicatorAnimate = {
-  opacity: 1,
-} as const;
-
-const navIndicatorExit = {
-  opacity: 0,
-} as const;
-
 export {
-  accordionTransition,
   accordionVariants,
+  accordionTransition,
   lavaBlobPrimaryAnimate,
   lavaBlobPrimaryTransition,
   lavaBlobSecondaryAnimate,
   lavaBlobSecondaryTransition,
+  navIndicatorHidden,
+  navIndicatorVisible,
+  navIndicatorTransition,
   browserPanelInitial,
   browserPanelWhileHover,
   browserPanelTransition,
-  navIndicatorTransition,
-  navIndicatorInitial,
-  navIndicatorAnimate,
-  navIndicatorExit,
 };
