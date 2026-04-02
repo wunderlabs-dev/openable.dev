@@ -12,6 +12,7 @@ import { SvgIconGlitters } from "@/components/icon/svg-icon-glitters";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
+import { Entrance } from "@/components/ui/entrance";
 import { LavaBlob } from "@/components/ui/lava-blob";
 import { Typography } from "@/components/ui/typography";
 
@@ -45,60 +46,66 @@ const HomePageHero = async () => {
     <div id="overview" className="relative flex flex-col items-center gap-16">
       <LavaBlob />
 
-      <Container size="sm" className="animate-entrance-2 px-12 lg:px-4">
-        <div className="flex flex-col gap-2">
-          <Typography variant="small" fontWeight="semibold">
-            {t.rich("hero.brand", renderers)}
-          </Typography>
+      <Entrance delay={0.1}>
+        <Container size="sm" className="px-12 lg:px-4">
+          <div className="flex flex-col gap-2">
+            <Typography variant="small" fontWeight="semibold">
+              {t.rich("hero.brand", renderers)}
+            </Typography>
 
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <Typography variant="h1">{t.rich("hero.title", renderers)}</Typography>
-              <Typography variant="small">{t("hero.description")}</Typography>
-            </div>
-
-            <Button variant="primary" className="self-start">
-              <SvgIconDownload size="md" />
-              {t("hero.download")}
-            </Button>
-          </div>
-        </div>
-      </Container>
-
-      <Container size="lg" className="animate-entrance-3">
-        <Card variant="glass" spacing="sm" className="w-full overflow-hidden">
-          <CardContent>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster={productPosterSrc.src}
-              className="h-full w-full rounded-xl object-cover"
-            >
-              <source src="/videos/product.mp4" type="video/mp4" />
-            </video>
-          </CardContent>
-        </Card>
-      </Container>
-
-      <Container size="md" className="animate-entrance-4">
-        <div className="flex flex-col gap-6 sm:flex-row">
-          {features.map((feature) => (
-            <div key={feature.titleKey} className="flex flex-1 flex-col gap-4">
-              <feature.icon className="size-8 text-white" />
-              <div className="flex flex-col gap-1">
-                <Typography variant="small" fontWeight="semibold">
-                  {t(feature.titleKey)}
-                </Typography>
-                <Typography variant="overline" color="muted">
-                  {t(feature.descKey)}
-                </Typography>
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
+                <Typography variant="h1">{t.rich("hero.title", renderers)}</Typography>
+                <Typography variant="small">{t("hero.description")}</Typography>
               </div>
+
+              <Button variant="primary" className="self-start">
+                <SvgIconDownload size="md" />
+                {t("hero.download")}
+              </Button>
             </div>
-          ))}
-        </div>
-      </Container>
+          </div>
+        </Container>
+      </Entrance>
+
+      <Entrance delay={0.2}>
+        <Container size="lg">
+          <Card variant="glass" spacing="sm" className="w-full overflow-hidden">
+            <CardContent>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={productPosterSrc.src}
+                className="h-full w-full rounded-xl object-cover"
+              >
+                <source src="/videos/product.mp4" type="video/mp4" />
+              </video>
+            </CardContent>
+          </Card>
+        </Container>
+      </Entrance>
+
+      <Entrance delay={0.3}>
+        <Container size="md">
+          <div className="flex flex-col gap-6 sm:flex-row">
+            {features.map((feature) => (
+              <div key={feature.titleKey} className="flex flex-1 flex-col gap-4">
+                <feature.icon className="size-8 text-white" />
+                <div className="flex flex-col gap-1">
+                  <Typography variant="small" fontWeight="semibold">
+                    {t(feature.titleKey)}
+                  </Typography>
+                  <Typography variant="overline" color="muted">
+                    {t(feature.descKey)}
+                  </Typography>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Entrance>
     </div>
   );
 };

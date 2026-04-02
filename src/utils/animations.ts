@@ -1,3 +1,18 @@
+const entranceInitial = {
+  opacity: 0,
+  y: 6,
+} as const;
+
+const entranceAnimate = {
+  opacity: 1,
+  y: 0,
+} as const;
+
+const entranceTransition = {
+  duration: 0.6,
+  ease: [0.25, 1, 0.5, 1],
+} as const;
+
 const accordionVariants = {
   initial: { height: 0, opacity: 0 },
   animate: { height: "auto", opacity: 1 },
@@ -64,6 +79,9 @@ const browserPanelTransition = {
 } as const;
 
 export {
+  entranceInitial,
+  entranceAnimate,
+  entranceTransition,
   accordionVariants,
   accordionTransition,
   lavaBlobPrimaryAnimate,
