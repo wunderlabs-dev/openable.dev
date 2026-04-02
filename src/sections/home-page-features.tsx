@@ -41,7 +41,7 @@ const HomePageFeatures = async () => {
             <Image
               src={madeForCreatorsSrc}
               alt={t("features.creators.title")}
-              className="ml-auto h-70 w-auto select-none object-cover"
+              className="ml-auto h-auto w-3/4 select-none object-cover lg:h-70 lg:w-auto"
             />
           </Card>
 
@@ -88,7 +88,7 @@ const HomePageFeatures = async () => {
             <Image
               src={oneClickSetupSrc}
               alt={t("features.setup.title")}
-              className="mx-auto h-70 w-auto select-none object-cover"
+              className="mx-auto h-auto w-3/4 select-none object-cover lg:h-70 lg:w-auto"
             />
           </Card>
         </div>
