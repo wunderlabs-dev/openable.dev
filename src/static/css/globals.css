@@ -28,4 +28,9 @@
 
   --shadow-card-inset:
     inset -1px -1px 0px rgba(255, 255, 255, 0.1), inset 1px 1px 0px rgba(255, 255, 255, 0.2);
+
+  --background-image-app-1: url("/images/bg-4@2x.png");
+  --background-image-app-2: url("/images/bg-5@2x.png");
+  --background-image-app-3: url("/images/bg-6@2x.png");
+  --background-image-app-4: url("/images/bg-7@2x.png");
 }
