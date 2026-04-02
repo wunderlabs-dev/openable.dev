@@ -43,11 +43,31 @@ const navIndicatorTransition: Transition = {
   damping: 18,
 };
 
-const navIndicatorInitial = { opacity: 0 };
+const browserPanelInitial = {
+  y: 0,
+} as const;
 
-const navIndicatorAnimate = { opacity: 1 };
+const browserPanelWhileHover = {
+  y: -70,
+} as const;
 
-const navIndicatorExit = { opacity: 0 };
+const browserPanelTransition = {
+  type: "spring",
+  stiffness: 200,
+  damping: 20,
+} as const;
+
+const navIndicatorInitial = {
+  opacity: 0,
+} as const;
+
+const navIndicatorAnimate = {
+  opacity: 1,
+} as const;
+
+const navIndicatorExit = {
+  opacity: 0,
+} as const;
 
 export {
   accordionTransition,
@@ -56,6 +76,9 @@ export {
   lavaBlobPrimaryTransition,
   lavaBlobSecondaryAnimate,
   lavaBlobSecondaryTransition,
+  browserPanelInitial,
+  browserPanelWhileHover,
+  browserPanelTransition,
   navIndicatorTransition,
   navIndicatorInitial,
   navIndicatorAnimate,

@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/utils/helpers";
 
-type CardVariant = "solid" | "glass";
+type CardVariant = "solid" | "glass" | null;
 
 const CardContext = createContext<CardVariant>("solid");
 
@@ -14,7 +14,7 @@ const cardVariants = cva(
   {
     variants: {
       variant: {
-        solid: "bg-grey-900/20",
+        solid: "bg-grey-900",
         glass: "backdrop-blur-2xl bg-grey-50/10",
       },
     },

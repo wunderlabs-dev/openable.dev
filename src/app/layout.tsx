@@ -29,7 +29,7 @@ const RootLayout = async ({
       lang={locale}
       className="scroll-smooth bg-grey-900 text-white selection:bg-amber-500 selection:text-white"
     >
-      <body className="bg-linear-to-r from-grey-800 to-grey-900 antialiased">
+      <body className="bg-linear-to-b from-grey-800 to-grey-900 antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppBar />
           <main className="flex flex-col gap-48 pt-48">{children}</main>

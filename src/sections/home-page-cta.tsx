@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Typography } from "@/components/ui/typography";
 import { SvgIconDownload } from "@/components/icon/svg-icon-download";
+import { SvgIconBrowser } from "@/components/icon/svg-icon-browser";
 import { SvgIconEye } from "@/components/icon/svg-icon-eye";
 
 const renderers = { gradient: gradientRenderer } as const;
@@ -15,31 +16,35 @@ const HomePageCta = async () => {
   const t = await getTranslations();
 
   return (
-    <Container size="md">
-      <Card variant="solid">
-        <CardContent spacing="lg" className="items-center gap-8">
-          <div className="flex w-full flex-col gap-4 whitespace-pre-line">
-            <Typography variant="h1" as="h2">
-              {t.rich("cta.title", renderers)}
-            </Typography>
+    <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
+      <SvgIconBrowser className="-mt-12 -mb-72 h-200" />
 
-            <Typography variant="small">{t("cta.description")}</Typography>
-          </div>
+      <Container size="md">
+        <Card variant="solid">
+          <CardContent spacing="lg" className="items-center gap-8">
+            <div className="flex w-full flex-col gap-4 whitespace-pre-line">
+              <Typography variant="h1" as="h2">
+                {t.rich("cta.title", renderers)}
+              </Typography>
 
-          <div className="flex items-center gap-3">
-            <Button variant="primary">
-              <SvgIconDownload size="md" />
-              {t("cta.download")}
-            </Button>
+              <Typography variant="small">{t("cta.description")}</Typography>
+            </div>
 
-            <Button variant="secondary">
-              <SvgIconEye size="md" />
-              {t("cta.docs")}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-    </Container>
+            <div className="flex items-center gap-3">
+              <Button variant="primary">
+                <SvgIconDownload size="md" />
+                {t("cta.download")}
+              </Button>
+
+              <Button variant="secondary">
+                <SvgIconEye size="md" />
+                {t("cta.docs")}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </Container>
+    </div>
   );
 };
 
