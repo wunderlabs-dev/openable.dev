@@ -79,6 +79,7 @@
     }
   },
   "appBar": {
+    "logoLabel": "Openable.dev home",
     "overview": "Overview",
     "features": "Features",
     "howItWorks": "How it works",
@@ -122,6 +123,7 @@
     }
   },
   "footer": {
+    "logoLabel": "Openable.dev home",
     "copyright": "© {year} Openable.dev created by <link>Wunderlabs</link>. All rights reserved.",
     "product": "Product",
     "overview": "Overview",

@@ -61,7 +61,7 @@ const HomePageFooter = ({ className, ...props }: HomePageFooterProps) => {
 
         <div className="flex flex-col items-stretch justify-between gap-12 pt-3 pb-12 lg:flex-row">
           <div className="flex flex-col justify-between gap-4 lg:gap-6">
-            <Link href="/">
+            <Link href="/" aria-label={t("footer.logoLabel")}>
               <SvgIconOpenable size="auto" className="max-w-xl" />
             </Link>
 

@@ -29,6 +29,7 @@ const HomePageAppBar = ({ className, ...props }: HomePageAppBarProps) => {
       <Container className="flex items-center justify-center gap-3 whitespace-nowrap">
         <Link
           href="/"
+          aria-label={t("appBar.logoLabel")}
           className="flex h-14 items-center justify-center px-6 rounded-full bg-grey-50/10 shadow-card-inset backdrop-blur-2xl"
         >
           <SvgIconOpenableSymbol size="auto" className="h-5" />
