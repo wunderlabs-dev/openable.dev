@@ -2,38 +2,35 @@ import "@/static/css/globals.css";
 
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getMessages } from "next-intl/server";
 
 import copy from "@/copy/en-EN.json";
+
+import { APP_URL } from "@/utils/constants";
+
 import { HomePageAppBar } from "@/components/home-page-app-bar";
 import { HomePageFooter } from "@/components/home-page-footer";
 
-const SITE_URL = "https://openable.dev";
-
-export const generateMetadata = async (): Promise<Metadata> => {
-  const t = await getTranslations();
-
-  return {
-    title: t("metadata.title"),
-    description: t("metadata.description"),
-    metadataBase: new URL(SITE_URL),
-    alternates: {
-      canonical: "/",
-    },
-    openGraph: {
-      type: "website",
-      locale: "en_US",
-      url: SITE_URL,
-      siteName: copy.metadata.siteName,
-      title: t("metadata.ogTitle"),
-      description: t("metadata.ogDescription"),
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("metadata.twitterTitle"),
-      description: t("metadata.twitterDescription"),
-    },
-  };
+export const metadata: Metadata = {
+  title: copy.metadata.title,
+  description: copy.metadata.description,
+  metadataBase: new URL(APP_URL),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: APP_URL,
+    siteName: copy.metadata.siteName,
+    title: copy.metadata.ogTitle,
+    description: copy.metadata.ogDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: copy.metadata.twitterTitle,
+    description: copy.metadata.twitterDescription,
+  },
 };
 
 const data = {
@@ -49,13 +46,13 @@ const data = {
         { "@type": "Person", name: "vtemian", url: "https://blog.vtemian.com/" },
         { "@type": "Person", name: "balajmarius", url: "https://balajmarius.com/" },
       ],
-      logo: new URL("/icon.svg", SITE_URL).toString(),
+      logo: new URL("/icon.svg", APP_URL).toString(),
     },
     {
       "@type": "WebSite",
       name: copy.metadata.siteName,
       description: copy.metadata.description,
-      url: new URL("/", SITE_URL).toString(),
+      url: new URL("/", APP_URL).toString(),
       inLanguage: "en-US",
       publisher: {
         "@type": "Organization",
@@ -69,7 +66,7 @@ const data = {
       description: copy.metadata.description,
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: new URL("/", SITE_URL).toString(),
+      url: new URL("/", APP_URL).toString(),
       offers: {
         "@type": "Offer",
         price: "0",

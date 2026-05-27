@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const APP_URL = "https://openable.dev";
+import { APP_URL } from "@/utils/constants";
 
 export const dynamic = "force-static";
 

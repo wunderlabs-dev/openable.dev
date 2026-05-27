@@ -1,34 +1,24 @@
 # Openable.dev
 
-> Run AI-generated apps without hassle
+> Openable.dev is a beta desktop application for running AI-generated projects locally without installing Node.js, using terminal commands, or configuring a development environment.
 
-Openable.dev is the missing link between AI code generation and local development. Import, run, and edit your projects in Cursor. No Node.js, no terminal commands, no configuration.
+Openable.dev helps non-technical users import AI-generated code through GitHub, install dependencies automatically, run the app locally, and open the project in Cursor for editing.
 
-## What is Openable?
+Key facts:
 
-Openable.dev is a desktop application that lets non-technical users run AI-generated code locally. It works with projects created by tools like Lovable, Bolt, v0, or any other AI code generation platform. Projects are imported via GitHub.
-
-## Key Features
-
-- Zero configuration: no need to install Node.js, npm, or any development tools
-- Cursor friendly: built with simplicity in mind, open and edit projects directly in Cursor
-- Works with any AI platform: use Lovable, Bolt, v0, or any other AI code generation platform
-- GitHub integration: connect your GitHub account and clone, sync, update repositories
-- One-click project setup: import a repository and run it instantly
-
-## How It Works
-
-1. Import your project: connect your GitHub account and select a repository
-2. Openable sets everything up: dependencies are installed automatically
-3. Run the app locally: start the application and open it in your browser
-4. Edit code in Cursor: open the project in Cursor and start editing
-
-## Status
-
-The project is currently in beta. Sign up at https://openable.dev to get early access.
-
-## Links
-
-- Website: https://openable.dev
-- Platform: macOS (Linux and Windows coming soon)
+- Product category: desktop developer tool
+- Audience: creators and non-technical users working with AI-generated code
+- Supported project sources: Lovable, Bolt, v0, and other AI code generation platforms that can export projects to GitHub
+- Core workflow: connect GitHub, import a repository, let Openable install dependencies, run locally, edit in Cursor
+- Current status: beta
+- Current platform: macOS, with Linux and Windows planned
 - Created by: Wunderlabs
+
+## Official Resources
+
+- [Website](https://openable.dev): Product overview, beta signup, and current platform information.
+- [Sitemap](https://openable.dev/sitemap.xml): Machine-readable list of public website URLs.
+
+## Source
+
+- [Openable GitHub repository](https://github.com/wunderlabs-dev/openable): Public source repository for the Openable application.

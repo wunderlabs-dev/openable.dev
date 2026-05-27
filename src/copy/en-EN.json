@@ -4,11 +4,7 @@
     "organizationName": "Wunderlabs",
     "organizationEmail": "office@wunderlabs.dev",
     "organizationUrl": "https://wunderlabs.dev/",
-    "organizationSameAs": [
-      "https://github.com/wunderlabs-dev",
-      "https://x.com/wunderlabs",
-      "https://agentic.tm/"
-    ],
+    "organizationSameAs": ["https://github.com/wunderlabs-dev", "https://agentic.tm/"],
     "title": "Openable - Run AI-generated apps without hassle",
     "description": "Run AI-generated apps without hassle. Import, run, and edit AI-generated projects in Cursor. No Node.js, no terminal, no configuration.",
     "ogTitle": "Openable.dev: Run AI-generated apps without hassle",
