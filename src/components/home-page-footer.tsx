@@ -75,7 +75,9 @@ const HomePageFooter = ({ className, ...props }: HomePageFooterProps) => {
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-12">
             {sections.map((section) => (
               <nav key={section.id} className="flex flex-col gap-3">
-                <Typography variant="h4">{t(section.title)}</Typography>
+                <Typography variant="h4" as="h2">
+                  {t(section.title)}
+                </Typography>
 
                 {section.links.map((item) => (
                   <Link
