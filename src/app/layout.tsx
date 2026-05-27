@@ -7,7 +7,6 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import copy from "@/copy/en-EN.json";
 import { HomePageAppBar } from "@/components/home-page-app-bar";
 import { HomePageFooter } from "@/components/home-page-footer";
-import { toString } from "es-toolkit/compat";
 
 const SITE_URL = "https://openable.dev";
 
@@ -59,13 +58,13 @@ const data = {
       email: copy.metadata.organizationEmail,
       url: copy.metadata.organizationUrl,
       sameAs: copy.metadata.organizationSameAs,
-      logo: toString(new URL("/images/favicon.svg", SITE_URL)),
+      logo: new URL("/images/favicon.svg", SITE_URL).toString(),
     },
     {
       "@type": "WebSite",
       name: copy.metadata.siteName,
       description: copy.metadata.description,
-      url: toString(new URL("/", SITE_URL)),
+      url: new URL("/", SITE_URL).toString(),
       inLanguage: "en-US",
       publisher: {
         "@type": "Organization",
@@ -79,8 +78,8 @@ const data = {
       description: copy.metadata.description,
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
-      url: toString(new URL("/", SITE_URL)),
-      image: toString(new URL(openGraphImage.url, SITE_URL)),
+      url: new URL("/", SITE_URL).toString(),
+      image: new URL(openGraphImage.url, SITE_URL).toString(),
       offers: {
         "@type": "Offer",
         price: "0",

@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { toString } from "es-toolkit/compat";
 
 const APP_URL = "https://openable.dev";
 
@@ -11,7 +10,7 @@ const robots = (): MetadataRoute.Robots => ({
     allow: "/",
     disallow: ["/api/", "/auth/", "/cli/"],
   },
-  sitemap: toString(new URL("/sitemap.xml", APP_URL)),
+  sitemap: new URL("/sitemap.xml", APP_URL).toString(),
 });
 
 export default robots;
