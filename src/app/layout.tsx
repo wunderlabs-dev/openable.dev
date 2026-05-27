@@ -10,16 +10,6 @@ import { HomePageFooter } from "@/components/home-page-footer";
 
 const SITE_URL = "https://openable.dev";
 
-const OG_IMAGE_WIDTH = 1200;
-const OG_IMAGE_HEIGHT = 630;
-
-const openGraphImage = {
-  url: "/images/og-default-1200x630.svg",
-  width: OG_IMAGE_WIDTH,
-  height: OG_IMAGE_HEIGHT,
-  alt: copy.metadata.siteName,
-};
-
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations();
 
@@ -30,7 +20,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
     alternates: {
       canonical: "/",
     },
-    icons: "/images/favicon.svg",
     openGraph: {
       type: "website",
       locale: "en_US",
@@ -38,13 +27,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
       siteName: copy.metadata.siteName,
       title: t("metadata.ogTitle"),
       description: t("metadata.ogDescription"),
-      images: [openGraphImage],
     },
     twitter: {
       card: "summary_large_image",
       title: t("metadata.twitterTitle"),
       description: t("metadata.twitterDescription"),
-      images: [openGraphImage],
     },
   };
 };
@@ -62,7 +49,7 @@ const data = {
         { "@type": "Person", name: "vtemian", url: "https://blog.vtemian.com/" },
         { "@type": "Person", name: "balajmarius", url: "https://balajmarius.com/" },
       ],
-      logo: new URL("/images/favicon.svg", SITE_URL).toString(),
+      logo: new URL("/icon.svg", SITE_URL).toString(),
     },
     {
       "@type": "WebSite",
@@ -83,7 +70,6 @@ const data = {
       applicationCategory: "DeveloperApplication",
       operatingSystem: "Web",
       url: new URL("/", SITE_URL).toString(),
-      image: new URL(openGraphImage.url, SITE_URL).toString(),
       offers: {
         "@type": "Offer",
         price: "0",
