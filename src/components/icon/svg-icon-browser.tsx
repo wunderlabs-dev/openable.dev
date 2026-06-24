@@ -1,17 +1,32 @@
 "use client";
 
 import type { ComponentProps } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
+import { isNull } from "es-toolkit";
 
 import { cn } from "@/utils/helpers";
 
-import {
-  browserPanelInitial,
-  browserPanelWhileHover,
-  browserPanelTransition,
-} from "@/utils/animations";
+import { browserPanelTransition } from "@/utils/animations";
 
 type SvgIconBrowserProps = ComponentProps<"svg">;
+
+const PANEL_LIFT_OFFSET_Y = -70;
+const PROXIMITY_FALLOFF_WEIGHTS = [1, 0.6, 0.35, 0.15] as const;
+
+const strokeByDistance = [
+  "stroke-white",
+  "stroke-grey-50/60",
+  "stroke-grey-50/45",
+  "stroke-grey-50/35",
+] as const;
+
+const fillByDistance = [
+  "fill-white",
+  "fill-grey-50/60",
+  "fill-grey-50/45",
+  "fill-grey-50/35",
+] as const;
 
 const paths = [
   {
@@ -157,29 +172,50 @@ const paths = [
 ] as const;
 
 const SvgIconBrowser = ({ className, ...props }: SvgIconBrowserProps) => {
+  const [path, setPath] = useState<number | null>(null);
+
   return (
-    <svg viewBox="0 70 1123 850" className={cn("w-full", className)} {...props}>
-      {paths.map((path, index) => (
-        <motion.g
-          key={index}
-          initial={browserPanelInitial}
-          whileHover={browserPanelWhileHover}
-          transition={browserPanelTransition}
-          className={cn(
-            "cursor-pointer",
-            "[&>ellipse]:fill-grey-50/30 [&>ellipse]:transition-[fill] [&>ellipse]:duration-300",
-            "[&>path:last-of-type]:stroke-grey-50/30 [&>path:last-of-type]:transition-[stroke] [&>path:last-of-type]:duration-300",
-            "hover:[&>ellipse]:fill-white",
-            "hover:[&>path:last-of-type]:stroke-white",
-          )}
-        >
-          <path className="fill-grey-900" d={path.fill} />
-          <path fill="none" d={path.stroke} />
-          {path.dots.map((dot, index) => (
-            <ellipse key={index} cx={dot.cx} cy={dot.cy} rx={dot.rx} ry={dot.ry} />
-          ))}
-        </motion.g>
-      ))}
+    <svg
+      viewBox="0 70 1123 850"
+      className={cn("w-full", className)}
+      onMouseLeave={() => setPath(null)}
+      {...props}
+    >
+      {paths.map((panel, index) => {
+        const distance = isNull(path) ? Infinity : Math.abs(index - path);
+        const factor = PROXIMITY_FALLOFF_WEIGHTS[distance];
+        const strokeClass = strokeByDistance[distance] ?? "stroke-grey-50/30";
+        const fillClass = fillByDistance[distance] ?? "fill-grey-50/30";
+
+        return (
+          <motion.g
+            key={index}
+            onHoverStart={() => setPath(index)}
+            className="cursor-pointer"
+            transition={browserPanelTransition}
+            animate={{
+              y: factor ? PANEL_LIFT_OFFSET_Y * factor : undefined,
+            }}
+          >
+            <path className="fill-grey-900" d={panel.fill} />
+            <path
+              fill="none"
+              d={panel.stroke}
+              className={cn("transition-colors duration-300", strokeClass)}
+            />
+            {panel.dots.map((dot) => (
+              <ellipse
+                key={dot.cx}
+                cx={dot.cx}
+                cy={dot.cy}
+                rx={dot.rx}
+                ry={dot.ry}
+                className={cn("transition-colors duration-300", fillClass)}
+              />
+            ))}
+          </motion.g>
+        );
+      })}
     </svg>
   );
 };

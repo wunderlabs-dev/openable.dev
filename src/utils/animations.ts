@@ -49,14 +49,6 @@ const navIndicatorTransition = {
   damping: 18,
 } as const;
 
-const browserPanelInitial = {
-  y: 0,
-} as const;
-
-const browserPanelWhileHover = {
-  y: -70,
-} as const;
-
 const browserPanelTransition = {
   type: "spring",
   stiffness: 200,
@@ -73,7 +65,5 @@ export {
   navIndicatorHidden,
   navIndicatorVisible,
   navIndicatorTransition,
-  browserPanelInitial,
-  browserPanelWhileHover,
   browserPanelTransition,
 };
