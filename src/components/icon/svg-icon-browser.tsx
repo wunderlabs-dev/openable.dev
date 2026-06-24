@@ -11,7 +11,8 @@ import { browserPanelTransition } from "@/utils/animations";
 
 type SvgIconBrowserProps = ComponentProps<"svg">;
 
-const PANEL_LIFT_OFFSET_Y = -70;
+const PANEL_LIFT_OFFSET_Y = -95;
+const PROXIMITY_FACTOR_INITIAL = 0;
 const PROXIMITY_FALLOFF_WEIGHTS = [1, 0.6, 0.35, 0.15] as const;
 
 const strokeByDistance = [
@@ -183,7 +184,7 @@ const SvgIconBrowser = ({ className, ...props }: SvgIconBrowserProps) => {
     >
       {paths.map((panel, index) => {
         const distance = isNull(path) ? Infinity : Math.abs(index - path);
-        const factor = PROXIMITY_FALLOFF_WEIGHTS[distance];
+        const factor = PROXIMITY_FALLOFF_WEIGHTS[distance] ?? PROXIMITY_FACTOR_INITIAL;
         const strokeClass = strokeByDistance[distance] ?? "stroke-grey-50/30";
         const fillClass = fillByDistance[distance] ?? "fill-grey-50/30";
 
@@ -191,11 +192,12 @@ const SvgIconBrowser = ({ className, ...props }: SvgIconBrowserProps) => {
           <motion.g
             key={index}
             onHoverStart={() => setPath(index)}
-            className="cursor-pointer"
+            className={cn(
+              "cursor-pointer",
+              factor > PROXIMITY_FACTOR_INITIAL && "will-change-transform",
+            )}
             transition={browserPanelTransition}
-            animate={{
-              y: factor ? PANEL_LIFT_OFFSET_Y * factor : undefined,
-            }}
+            animate={{ y: PANEL_LIFT_OFFSET_Y * factor }}
           >
             <path className="fill-grey-900" d={panel.fill} />
             <path
